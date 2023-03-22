@@ -203,15 +203,15 @@ MYSQL_SCRIPT
 mysql -u root  cacti < $location/cacti/cacti.sql
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root  mysql
 
-sed -i -e 's@^$database_type.*@$database_type = "mysql";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^$database_default.*@$database_default = "cacti";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^$database_hostname.*@$database_hostname = "127.0.0.1";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^$database_username.*@$database_username = "cacti";@g' /var/www/html/cacti/include/config.php
-##sed -i -e 's@^$database_password.*@$database_password = "cacti";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^$database_password.*@$database_password = "'$password'";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^$database_port.*@$database_port = "3306";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^$database_ssl.*@$database_ssl = "false";@g' /var/www/html/cacti/include/config.php
-sed -i -e 's@^//$url_path@$url_path@g' /var/www/html/cacti/include/config.php
+sed -i -e 's@^$database_type.*@$database_type = "mysql";@g' $location/cacti/include/config.php
+sed -i -e 's@^$database_default.*@$database_default = "cacti";@g' $location/cacti/include/config.php
+sed -i -e 's@^$database_hostname.*@$database_hostname = "127.0.0.1";@g' $location/cacti/include/config.php
+sed -i -e 's@^$database_username.*@$database_username = "cacti";@g' $location/cacti/include/config.php
+##sed -i -e 's@^$database_password.*@$database_password = "cacti";@g' $location/cacti/include/config.php
+sed -i -e 's@^$database_password.*@$database_password = "'$password'";@g' $location/cacti/include/config.php
+sed -i -e 's@^$database_port.*@$database_port = "3306";@g' $location/cacti/include/config.php
+sed -i -e 's@^$database_ssl.*@$database_ssl = "false";@g' $location/cacti/include/config.php
+sed -i -e 's@^//$url_path@$url_path@g' $location/cacti/include/config.php
 
 
 
