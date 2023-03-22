@@ -72,6 +72,7 @@ then
 apt-get  install -y build-essential dos2unix dh-autoreconf libtool  help2man libssl-dev libmysql++-dev  librrds-perl libsnmp-dev 
 echo "downloading and compling spine"
 git clone https://github.com/Cacti/spine.git
+chmod -R 774 spine
 cd spine
 ./bootstrap
 ./configure
